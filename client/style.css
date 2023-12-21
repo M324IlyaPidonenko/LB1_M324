@@ -1,3 +1,43 @@
 body {
     font-family: 'Roboto', sans-serif;
 }
+input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+label:hover {
+    scale: 1.02;
+}
+label:active {
+    scale: 0.98;
+}
+  /* Darkmode Button */
+label {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #333333;
+    color: #fff;
+    cursor: pointer;
+    border: 1px solid #333333;
+    border-radius: 5px;
+    transition: 0.3 ease;
+}
+.header-div {
+    background-color: #3B82F6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.main-bg {
+    background-color: #fff; 
+    padding: 20px;
+}
+#message {
+    background-color: #fff; /* Standard-Hintergrundfarbe für die Nachricht */
+    padding: 10px;
+}
+#inputBox {
+    background-color: #F3F4F6;
+}

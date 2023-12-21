@@ -11,13 +11,15 @@
     <script src="/script.js"></script>
   </head>
   <body>
-    <div class="w-full h-screen flex justify-center">
+    <div id="mainBg" class="main-bg w-full h-screen flex justify-center">
       <div class="max-w-2xl w-full md:w-3/4 lg:w-2/4 bg-white flex flex-col">
-        <div class="bg-blue-500 px-4 py-4 rounded-b">
+        <div id="headerDiv" class="header-div px-4 py-4 rounded-b">
           <p class="text-lg font-bold text-white">LB1 Chat - M324</p>
+          <label for="darkmode" id="darkmodeLabel" onclick="toggleDarkMode()">Darkmode</label>
+          <input type="checkbox" id="darkmode" name="darkmode" onchange="toggleDarkMode()">
         </div>
-        <div class="flex-grow flex flex-col justify-start p-4 gap-4" id="messages"></div>
-        <div class="bg-gray-100 px-4 py-4 flex items-center rounded-t">
+        <div class="child-bg flex-grow flex flex-col justify-start p-4 gap-4" id="messages"></div>
+        <div id="inputBox" class="px-4 py-4 flex items-center rounded-t">
           <input
             id="messageInput"
             type="text"
