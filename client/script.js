@@ -24,11 +24,28 @@
         break;
       case 'typing':
         typingUsers = message.users;
+        updateTypingUsersDisplay();
         break;
       default:
         break;
     }
   });
+  function updateTypingUsersDisplay(username) {
+    const typingUsersElement = document.getElementById('typingUsers');
+    if (!typingUsersElement) return;
+  
+    if (typingUsers.length > 0) {
+      const jsonString = JSON.stringify({ type: 'typing', user: myUser });
+      const jsonObject = JSON.parse(jsonString);
+
+      const activeTyping = `${jsonObject.user.name} typing...`;
+      typingUsersElement.textContent = `${activeTyping}`;
+      
+    } else {
+      typingUsersElement.textContent = '';
+      
+    }
+  }
   socket.addEventListener('close', (event) => {
     console.log('WebSocket closed.');
   });

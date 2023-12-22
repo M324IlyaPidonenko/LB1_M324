@@ -18,8 +18,11 @@
           <label for="darkmode" id="darkmodeLabel" onclick="toggleDarkMode()">Darkmode</label>
           <input type="checkbox" id="darkmode" name="darkmode" onchange="toggleDarkMode()">
         </div>
+
         <div class="child-bg flex-grow flex flex-col justify-start p-4 gap-4" id="messages"></div>
+        <div id="typingUsers" class="text-sm text-gray-500"></div>
         <div id="inputBox" class="px-4 py-4 flex items-center rounded-t">
+
           <input
             id="messageInput"
             type="text"
