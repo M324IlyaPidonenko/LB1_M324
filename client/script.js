@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 (async () => {
   const myUser = await generateRandomUser();
   let activeUsers = [];
@@ -13,6 +14,7 @@
     console.log('WebSocket message:', message);
     switch (message.type) {
       case 'message':
+        // eslint-disable-next-line no-case-declarations
         const messageElement = generateMessage(message, myUser);
         document.getElementById('messages').appendChild(messageElement);
         setTimeout(() => {
@@ -33,17 +35,15 @@
   function updateTypingUsersDisplay(username) {
     const typingUsersElement = document.getElementById('typingUsers');
     if (!typingUsersElement) return;
-  
+
     if (typingUsers.length > 0) {
       const jsonString = JSON.stringify({ type: 'typing', user: myUser });
       const jsonObject = JSON.parse(jsonString);
 
       const activeTyping = `${jsonObject.user.name} typing...`;
       typingUsersElement.textContent = `${activeTyping}`;
-      
     } else {
       typingUsersElement.textContent = '';
-      
     }
   }
   socket.addEventListener('close', (event) => {
@@ -83,7 +83,7 @@ function toggleDarkMode() {
   let headerDiv = document.getElementById('headerDiv');
   let messageDiv = document.getElementById('messages');
   let darkmodeLabel = document.getElementById('darkmodeLabel');
-  let inputBox = document.getElementById('inputBox'); 
+  let inputBox = document.getElementById('inputBox');
   let sendButton = document.getElementById('sendButton');
 
   if (darkModeInput.checked) {
