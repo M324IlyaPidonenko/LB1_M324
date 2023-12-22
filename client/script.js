@@ -25,7 +25,6 @@
       case 'typing':
         typingUsers = message.users;
         updateTypingUsersDisplay();
-        console.log("Test" + message.user.name)
         break;
       default:
         break;
