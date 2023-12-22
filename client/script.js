@@ -76,3 +76,35 @@
     }
   });
 })();
+
+function toggleDarkMode() {
+  let darkModeInput = document.getElementById('darkmode');
+  let mainBg = document.getElementById('mainBg');
+  let headerDiv = document.getElementById('headerDiv');
+  let messageDiv = document.getElementById('messages');
+  let darkmodeLabel = document.getElementById('darkmodeLabel');
+  let inputBox = document.getElementById('inputBox'); 
+  let sendButton = document.getElementById('sendButton');
+
+  if (darkModeInput.checked) {
+    // Dark Mode aktiviert
+    sendButton.style.filter = 'invert(1)';
+    inputBox.style.backgroundColor = '#D1D5DB';
+    mainBg.style.backgroundColor = '#1f1f1f';
+    headerDiv.style.backgroundColor = '#1E3A8A';
+    messageDiv.style.backgroundColor = '#333333';
+    darkmodeLabel.style.backgroundColor = '#fff';
+    darkmodeLabel.style.color = '#000';
+    darkmodeLabel.textContent = 'Lightmode';
+  } else {
+    // Dark Mode deaktiviert
+    inputBox.style.backgroundColor = '#F3F4F6';
+    mainBg.style.backgroundColor = '#fff';
+    headerDiv.style.backgroundColor = '#3B82F6';
+    messageDiv.style.backgroundColor = '#fff';
+    darkmodeLabel.style.backgroundColor = '#333';
+    darkmodeLabel.style.color = '#fff';
+    darkmodeLabel.textContent = 'Darkmode';
+    sendButton.style.filter = 'invert(0)';
+  }
+}
