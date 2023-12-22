@@ -7,10 +7,12 @@
     "plugin:@typescript-eslint/recommended",
     "prettier"
   ],
-  "ignorePatterns": ["build", "node_modules", "client"],
   "rules": {
-    "no-console": 0,
-    "prettier/prettier": 2
+    "no-console": 1,
+    "prettier/prettier": [
+      "error",
+      { "endOfLine": "auto" }
+    ]
   },
   "env": {
     "browser": true,
